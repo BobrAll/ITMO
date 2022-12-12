@@ -1,0 +1,8 @@
+//
+// Created by Админ on 30.11.2022.
+//
+
+#ifndef IMAGE_TRANSFORMER_IMAGE_H
+#define IMAGE_TRANSFORMER_IMAGE_H
+
+#endif //IMAGE_TRANSFORMER_IMAGE_H

@@ -17,11 +17,11 @@ int main(int argc, char **argv) {
   // error handling should be here
   FILE *f1 = fopen(argv[1], "rb");
   if (!f1)
-    err("Bad first input file\n");
+    err("Bad first include file\n");
   FILE *f2 = fopen(argv[2], "rb");
   if (!f2) {
     fclose(f1);
-    err("Bad second input file\n");
+    err("Bad second include file\n");
   }
 
   const enum bmp_compare_status status = bmp_cmp(f1, f2);

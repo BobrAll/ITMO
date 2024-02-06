@@ -1,0 +1,254 @@
+_type: export
+__export_format: 4
+__export_date: 2024-02-06T14:25:34.984Z
+__export_source: insomnia.desktop.app:v8.6.0
+resources:
+  - _id: req_928b5179f9024c7ea92ac0d7e1bbe8f0
+    parentId: wrk_2255f4ae96d249b983b9317d3e8f9b17
+    modified: 1707225422089
+    created: 1707061560317
+    url: http://localhost:8080/api/v1/auth/signUp
+    name: SignUp
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "login": "oleg_mongol",
+            "firstname": "Oleg",
+            "lastname": "Tinkoff",
+            "email": "tinkoff@mail.ru",
+            "password": "0000"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.6.0
+    authentication: {}
+    metaSortKey: -1707061560317
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_2255f4ae96d249b983b9317d3e8f9b17
+    parentId: null
+    modified: 1707060331588
+    created: 1707060331588
+    name: blps_lab1
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_409d72a248e145639b8ab1599b4905a4
+    parentId: wrk_2255f4ae96d249b983b9317d3e8f9b17
+    modified: 1707228504179
+    created: 1707061971687
+    url: http://localhost:8080/api/v1/auth/signIn
+    name: SignIn
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "login": "oleg_mongol",
+            "password": "0000"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.6.0
+    authentication: {}
+    metaSortKey: -1707061046564.5
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6df3dc5600c04eae8268f57c3c57477e
+    parentId: wrk_2255f4ae96d249b983b9317d3e8f9b17
+    modified: 1707228553882
+    created: 1707225388483
+    url: http://localhost:8080/api/v1/auth/logout
+    name: Logout
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.6.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzA3MjI4NTQ0LCJleHAiOjE3MDczMTQ5NDR9.v76ZDJEZaaOzqTMvmH-w8IYKx0dwzDJubQx6v7Hlk3c
+    metaSortKey: -1707060965924.75
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_36718da860ad466bafdaff88f6c8b3f0
+    parentId: wrk_2255f4ae96d249b983b9317d3e8f9b17
+    modified: 1707228580932
+    created: 1707060463075
+    url: http://localhost:8080/api/v1/flats
+    name: Add flat
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "totalArea": "22.4",
+            "totalPrice": "4200000",
+            "address": "ул. Белорусская, 6",
+            "haveBalcony": "true",
+            "isApartments": "false",
+            "kitchenArea": "6.2",
+            "livingArea": "14.5",
+            "rooms": "2",
+            "floor": "4"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e47f730a174c44c2bd3dc11839b349fa
+      - name: User-Agent
+        value: insomnia/8.6.0
+        id: pair_e2b16700e2504609baccafd4fc3067f2
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzA3MjI4NTUwLCJleHAiOjE3MDczMTQ5NTB9.qU4DV-etmMGuDiu_Mw-nzsb13dVSpYsy2SUF6H2oOlg
+    metaSortKey: -1707060885285
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d0efeed2defe4013ad2360d33d1685e8
+    parentId: wrk_2255f4ae96d249b983b9317d3e8f9b17
+    modified: 1707228585476
+    created: 1707060339818
+    url: http://localhost:8080/api/v1/flats
+    name: Get flats
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.6.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzA3MjI4NTUwLCJleHAiOjE3MDczMTQ5NTB9.qU4DV-etmMGuDiu_Mw-nzsb13dVSpYsy2SUF6H2oOlg
+    metaSortKey: -1707060724005.5
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4d22446b4b6d47ed8a7729ee00f009ee
+    parentId: wrk_2255f4ae96d249b983b9317d3e8f9b17
+    modified: 1707228590138
+    created: 1707062633345
+    url: http://localhost:8080/api/v1/flats/1
+    name: Get flat by id
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.6.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzA3MjI4NTUwLCJleHAiOjE3MDczMTQ5NTB9.qU4DV-etmMGuDiu_Mw-nzsb13dVSpYsy2SUF6H2oOlg
+    metaSortKey: -1707060401446.5
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_991830889954407b9b68fc616aa85242
+    parentId: wrk_2255f4ae96d249b983b9317d3e8f9b17
+    modified: 1707228594854
+    created: 1707060532812
+    url: http://localhost:8080/api/v1/flats/1
+    name: Delete flat by id
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.6.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzA3MjI4NTUwLCJleHAiOjE3MDczMTQ5NTB9.qU4DV-etmMGuDiu_Mw-nzsb13dVSpYsy2SUF6H2oOlg
+    metaSortKey: -1707060339618
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_8948a946178f33ee486bbe471503bc67b956c47b
+    parentId: wrk_2255f4ae96d249b983b9317d3e8f9b17
+    modified: 1707060331597
+    created: 1707060331597
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1707060331597
+    _type: environment
+  - _id: jar_8948a946178f33ee486bbe471503bc67b956c47b
+    parentId: wrk_2255f4ae96d249b983b9317d3e8f9b17
+    modified: 1707228571183
+    created: 1707060331598
+    name: Default Jar
+    cookies:
+      - key: JSESSIONID
+        value: 93DC017FF9F88CC4BC1640E8EF7553E0
+        domain: localhost
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2024-02-04T15:45:54.464Z
+        lastAccessed: 2024-02-06T14:09:31.183Z
+        id: 8bdffab8-857d-49fd-87d6-31ba662db649
+    _type: cookie_jar

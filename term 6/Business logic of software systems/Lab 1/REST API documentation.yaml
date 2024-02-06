@@ -1,0 +1,200 @@
+openapi: "3.0.3"
+info:
+  title: "blps_lab1 API"
+  description: "REST API for business-logic of software system lab #1"
+  version: "1.0.0"
+  contact:
+    email: bobrus91@gmail.com
+servers:
+  - url: http://localhost:8080
+
+tags:
+  - name: flat
+    description: Operations to manage flats
+  - name: user
+    description: Operations to provide security
+
+paths:
+  /api/v1/auth/signUp:
+    post:
+      tags: 
+        - user
+      summary: "Create a new user"
+      operationId: "register"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/AuthenticationResponse"
+  /api/v1/auth/signIn:
+    post:
+      tags: 
+        - user
+      summary: "Logs user into the system"
+      operationId: "authenticate"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthenticationRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/AuthenticationResponse"
+  /api/v1/auth/logout:
+    get:
+      tags:
+       - user
+      summary: "GET api/v1/auth/logout"
+      operationId: "logout"
+      parameters:
+      - name: "authorization"
+        in: "header"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+  /api/v1/flats:
+    get:
+      tags: 
+        - flat
+      summary: "Get list of existing flats"
+      operationId: "getFlats"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Flat"
+    post:
+      tags: 
+        - flat
+      summary: "Add a new flat to the store"
+      operationId: "add"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Flat"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "boolean"
+  /api/v1/flats/{flatId}:
+    get:
+      tags: 
+        - flat
+      summary: "Get flat by ID"
+      operationId: "getFlat"
+      parameters:
+        - name: "flatId"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Flat"
+    delete:
+      tags: 
+        - flat
+      summary: "Deletes a flat"
+      operationId: "removeFlat"
+      parameters:
+        - name: "flatId"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+
+components:
+  schemas:
+    AuthenticationRequest:
+      type: "object"
+      properties:
+        login:
+          type: "string"
+        password:
+          type: "string"
+    AuthenticationResponse:
+      type: "object"
+      properties:
+        token:
+          type: "string"
+    RegisterRequest:
+      type: "object"
+      properties:
+        login:
+          type: "string"
+        firstname:
+          type: "string"
+        lastname:
+          type: "string"
+        email:
+          type: "string"
+        password:
+          type: "string"
+    Flat:
+      type: "object"
+      properties:
+        haveBalcony:
+          type: "boolean"
+        isApartments:
+          type: "boolean"
+        kitchenArea:
+          type: "number"
+          format: "double"
+        livingArea:
+          type: "number"
+          format: "double"
+        rooms:
+          type: "integer"
+          format: "int32"
+        floor:
+          type: "integer"
+          format: "int32"
+        id:
+          type: "integer"
+          format: "int32"
+        totalArea:
+          type: "number"
+          format: "double"
+        totalPrice:
+          type: "number"
+          format: "double"
+        address:
+          type: "string"
